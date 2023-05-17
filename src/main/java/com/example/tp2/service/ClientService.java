@@ -12,6 +12,14 @@ public class ClientService {
     @Autowired
     ClientRepository clientRepository;
     public List<Client> fetchAll() {
+
         return clientRepository.findAll();
+    }
+    public void save(Client client) {
+        clientRepository.save(client);
+    }
+
+    public void deleteById(int id){
+        clientRepository.deleteById(id);
     }
 }
