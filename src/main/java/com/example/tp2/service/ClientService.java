@@ -18,8 +18,10 @@ public class ClientService {
     public void save(Client client) {
         clientRepository.save(client);
     }
-
-    public void deleteById(int id){
+    public Client fetchById(int id) {
+        return clientRepository.findById(id).get();
+    }
+    public void delete(int id){
         clientRepository.deleteById(id);
     }
 }
